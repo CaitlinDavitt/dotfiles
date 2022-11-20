@@ -1,0 +1,6 @@
+set $term kitty
+set $browser flatpak run org.mozilla.firefox
+set $filemanager nemo
+set $editor kitty nvim
+set $launcher nwg-drawer -c 6 -is 64 -fscol 2 -term kitty
+set $exit nwg-bar -p center -a middle -i 48

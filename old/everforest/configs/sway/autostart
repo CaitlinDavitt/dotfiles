@@ -1,0 +1,8 @@
+exec rm /tmp/nwg-shell-check-update.lock
+exec wlsunset -l 41.8874 -L -87.7656 -t 4500 -T 6500 -g 1.0
+exec swaync -s /home/caitlin/.config/swaync/style.css
+exec nm-applet --indicator
+exec_always nwg-autotiling -w 1 2 3 4 5 6 7 8 9 10
+exec_always nwg-panel
+exec_always nwg-shell-check-updates
+exec swayidle timeout 600 nwg-lock timeout 1800 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' 
