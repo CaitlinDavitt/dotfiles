@@ -13,7 +13,11 @@ waybar, status bar
 
 mako, notifications
 
-eww, dashboard that only kinda works
+eww, dashboard that only kinda works still figuring this one out
+
+nwg-drawer, drawer style launcher
+
+nwg-bar, powermenu
 
 wofi, menus
 
