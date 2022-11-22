@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # ***This script was made by Clay Gomera (Drake)***
 #  - Description: A simple power menu rofi script

@@ -196,15 +196,15 @@
 //-- Launcher -----------------------------
     "custom/launcher":{
         "format": " ",
-        "on-click": "$XDG_CONFIG_HOME/eww/dashboard/launch_dashboard",
-        "on-click-right": "eww --config $XDG_CONFIG_HOME/eww/dashboard/ kill"
+        "on-click": "nwg-drawer",
+        //"on-click-right": "eww --config /home/rjm/.config/eww/dashboard/ kill"
     },
 
 //-- Power --------------------------------
     "custom/power":{
         "format": " ",
-        "on-click": "$XDG_CONFIG_HOME/hypr/scripts/powermenu.sh",
-        "on-click-right": "killall nwg-bar"
+        "on-click": "nwg-bar",
+        //"on-click-right": "killall nwg-bar"
     },
 
 //-- Weather -----------------------------

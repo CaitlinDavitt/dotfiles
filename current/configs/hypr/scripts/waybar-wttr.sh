@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 LOC="$1"
 # HTML encode string as %20
