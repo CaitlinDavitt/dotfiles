@@ -3,6 +3,8 @@ My dotfiles for hyprland
 # Notable programs
 hyprland, window manager
 
+swww, wallpaper manager
+
 refind, bootmanager https://sourceforge.net/projects/refind/ theme https://github.com/bobafetthotmail/refind-theme-regular
 
 greetd, login manager
