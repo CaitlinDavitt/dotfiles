@@ -46,6 +46,7 @@
         "tooltip": false,
         "on-scroll-down": "/usr/local/bin/hyprctl dispatch workspace m+1",
         "on-scroll-up": "/usr/local/bin/hyprctl dispatch workspace m-1"
+        "escape": true,
     },
     "wlr/workspaces": {
         "sort-by-name": true,
@@ -69,6 +70,8 @@
     },
     "hyprland/window": {
         "max-length": 30
+        "escape": true,
+
     },
 
 //-- Idle ---------------------------------
@@ -229,12 +232,13 @@
         "format-icons": ["", "", ""]
     },
 
-//-- Spotify  ---------------------------
+//-- Playerctl  ---------------------------
 "custom/media": {
     "format": "{icon} {}",
     "escape": true,
     "return-type": "json",
-    "max-length": 40,
+    "interval": 5,
+    "max-length": 30,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
     "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.

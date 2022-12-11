@@ -60,8 +60,6 @@ exec /usr/bin/flatpak run org.mozilla.firefox &
 #exec /usr/bin/blueman-applet &
 exec /usr/local/bin/piactl connect &
 
-exec /usr/bin/spotifyd --no-daemon &
-
 exec /usr/bin/playerctl&
 
 
