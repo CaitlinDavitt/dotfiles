@@ -15,7 +15,7 @@ mako, notifications
 
 eww, dashboard that only kinda works still figuring this one out
 
-nwg-drawer, drawer style launcher
+ulauncher, spotlight like launcher
 
 nwg-bar, powermenu
 
@@ -53,10 +53,10 @@ pfetch, fetch for when my terminal starts
 
 neofetch, no explanation needed
 
-spotify, music
-
-spicetify, to make spotify better
+spotifyd + spotify-tui, music
 
 
 My current theme is catppuccin macchiato
 Get your catppuccin themes here https://github.com/catppuccin/catppuccin
+
+Please note some configs are not stored on github, I don't want to give you guys my tokens
