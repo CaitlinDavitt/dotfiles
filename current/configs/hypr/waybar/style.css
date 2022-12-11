@@ -23,6 +23,8 @@ window#waybar.hidden {
     background-image: linear-gradient(180deg, rgba(30, 30, 46, 0.8) 1%, rgba(24, 25, 38, 0.9) 90%);
     color: #CDD6F4;
     border-radius: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
 
 }
 
@@ -71,9 +73,18 @@ window#waybar.hidden {
     color: #CDD6F4;
 }
 
-#window,
+#window {
+    background: rgba(31, 31, 31, .5);
+    background-image: linear-gradient(180deg, rgba(30, 30, 46, 0.8) 1%, rgba(24, 25, 38, 0.9) 90%);
+    color: #CDD6F4;
+    border-radius: 20px;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
 #workspaces {
-    margin: 0px 4px;
+    /* margin: 0px 4px; */
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -90,6 +101,7 @@ window#waybar.hidden {
     background-color: rgba(30, 30, 46, 0.5);
     background-image: linear-gradient(180deg, rgba(30, 30, 46, 0.8) 1%, rgba(24, 25, 38, 0.9) 90%);
     color: rgba(166, 227, 161, 1);
+    border-radius: 20px;
 }
 
 #battery {
@@ -168,7 +180,7 @@ label:focus {
 
 #pulseaudio.muted {
     background-color: rgba(30, 30, 46, 0.6);
-    color: red;
+    color: #f38ba8;
 }
 
 #mpd {
@@ -180,31 +192,31 @@ label:focus {
     margin-left: 5px;
 }
 
-#custom-media {
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+/* #custom-media { */
+/*     background-color: #8EC5FC; */
+/*     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
+/*     color: #CDD6F4; */
+/*     border-radius: 20px; */
+/*     margin-right: 5px; */
+
+/* } */
+
+#custom-media{
+    background: rgba(31, 31, 31, .5);
+    background-image: linear-gradient(180deg, rgba(30, 30, 46, 0.8) 1%, rgba(24, 25, 38, 0.9) 90%);
     color: #CDD6F4;
     border-radius: 20px;
-    margin-right: 5px;
-
+    padding-left:10px;
+    padding-right:10px;
 }
 
-#custom-media.custom-spotify {
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    color: #CDD6F4;
-    border-radius: 20px;
-    margin-right: 5px;
-
-}
-
-#custom-media.custom-vlc {
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    color: black;
-    border-radius: 20px;
-    margin-right: 5px;
-}
+/* #custom-media.custom-vlc { */
+/*     background-color: #8EC5FC; */
+/*     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
+/*     color: black; */
+/*     border-radius: 20px; */
+/*     margin-right: 5px; */
+/* } */
 
 #custom-power{
     color: #CDD6F4;

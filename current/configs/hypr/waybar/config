@@ -3,13 +3,16 @@
     "layer": "top",
     "position": "top",
     "output": ["DP-5", "eDP-1", "DP-8"], // Which Monitor waybar opens on
-    "height": 35,
+    "height": 30,
     "spacing": 4,
     "margin-top": 5,
     "margin-bottom":1,
 //-- Modules -----------------------------
-    "modules-left":[  "custom/launcher", "wlr/workspaces", "hyprland/window", "custom/media"],
-    "modules-right":["idle_inhibitor", "custom/weather", "bluetooth", "pulseaudio", "cpu", "memory", "disk", "temperature",  "battery", "tray", "clock", "custom/power"],
+    "modules-left":["custom/launcher", "wlr/workspaces", "hyprland/window", "custom/media"],
+    //"modules-left":["custom/media"],
+    "modules-right":["idle_inhibitor", "backlight", "custom/weather", "bluetooth", "pulseaudio", "cpu", "memory", "disk", "temperature",  "battery", "tray", "custom/power"],
+
+    "modules-center":["clock"],
   
 
 //-- TaskBar ------------------------------
@@ -87,8 +90,9 @@
     "clock": {
         "timezone": "America/Chicago",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": " {:%H:%M}",
-        "format-alt": " {:%a %b %d, %G}"
+        "format": " {:%H:%M:%S}",
+        "format-alt": " {:%a %b %d, %G}",
+        "interval": 1
     },
 
 //-- CPU ---------------------------------
@@ -165,7 +169,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
      },
 
 //-- MPD ---------------------------------
@@ -195,8 +199,8 @@
 
 //-- Launcher -----------------------------
     "custom/launcher":{
-        "format": " ",
-        "on-click": "nwg-drawer",
+        "format": "",
+        "on-click": "ulauncher-toggle",
         //"on-click-right": "eww --config /home/rjm/.config/eww/dashboard/ kill"
     },
 
@@ -212,7 +216,7 @@
     "format": "{}",
     "tooltip": true,
     "interval": 3600,
-    "exec": "~/.config/hypr/scripts/waybar-wttr.sh",
+    "exec": "$XDG_CONFIG_HOME/hypr/scripts/waybar-wttr.sh",
     "return-type": "json"
     },
 //-- Tempturature ------------------------
@@ -225,6 +229,30 @@
         "format-icons": ["", "", ""]
     },
 
+//-- Spotify  ---------------------------
+"custom/media": {
+    "format": "{icon} {}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "$HOME/.config/hypr/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+},
+
+//-- Backlight  ---------------------------
+    "backlight": {
+      "format": "{percent}% {icon}",
+    	"format-icons": [""], 
+      //"interval" : 0.2,
+      "device": "intel_backlight",
+    	"on-scroll-down": "$XDG_CONFIG_HOME/hypr/scripts/brightness --dec",
+    	"on-scroll-up": "$XDG_CONFIG_HOME/hypr/scripts/brightness --inc",
+},
+
 //-- Bluetooth  ---------------------------
     "bluetooth": {
   	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
@@ -234,32 +262,9 @@
   	"tooltip-format": "{controller_alias}\t{controller_address}",
   	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
   	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "exec $XDG_CONFIG_HOME/hypr/scripts/wofi_blue"
+    "on-click": "$XDG_CONFIG_HOME/hypr/scripts/wofi_blue"
     },
 
 },
 
-//-- Backlight  ---------------------------
-    "backlight": {
-    	"format": "{icon}",
-    	//"format-icons": [""],
-      //"interval" : 0.2,
-      "device": "intel_backlight",
-    	"on-scroll-down": "XDG_CONFIG_HOME/hypr/scripts/brightness --dec",
-    	"on-scroll-up": "exec XDG_CONFIG_HOME/.config/hypr/scripts/brightness --inc",
-},
-
-//-- Spotify  ---------------------------
-"custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$XDG_CONFIG_HOME/hypr/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
-        //"exec": "$XDG_CONFIG_HOME/hypr/scripts/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
 }

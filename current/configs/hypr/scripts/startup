@@ -16,9 +16,6 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Lauch statusbar (waybar)
 exec ~/.config/hypr/scripts/statusbar &
 
-# Set wallpaper
-swaybg --image /usr/share/backgrounds/current/current.png &
-
 # Apply themes
 exec ~/.config/hypr/scripts/gtkthemes &
 
@@ -51,9 +48,23 @@ exec $XDG_CONFIG_HOME/hypr/scripts/gtkthemes &
 
 exec /usr/bin/wlsunset -l 41.8874 -L -87.7656 -t 4500 -T 6500 -g 1.0 &
 
+# Set wallpaper
+# swaybg -o DP-1 --image /usr/share/backgrounds/current/current.png -m scale &
+# swaybg -o eDP-1 --image /usr/share/backgrounds/current/current.png -m scale &
+exec $XDG_CONFIG_HOME/hypr/scripts/wallpaper.sh &
+
 exec /usr/bin/flatpak run com.discordapp.Discord &
 exec /usr/bin/kitty &
 exec /usr/bin/flatpak run org.mozilla.Thunderbird &
 exec /usr/bin/flatpak run org.mozilla.firefox &
 #exec /usr/bin/blueman-applet &
 exec /usr/local/bin/piactl connect &
+
+exec /usr/bin/spotifyd --no-daemon &
+
+exec /usr/bin/playerctl&
+
+
+exec $XDG_CONFIG_HOME/hypr/scripts/cleanup.sh &
+
+exec ulauncher
